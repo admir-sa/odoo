@@ -2,7 +2,7 @@
 # Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 {
-    'name': 'Inventory',
+    'name': 'Inventory test',
     'version': '1.1',
     'summary': 'Manage your stock and logistics activities',
     'website': 'https://www.odoo.com/app/inventory',
