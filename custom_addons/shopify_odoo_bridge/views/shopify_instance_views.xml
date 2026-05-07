@@ -1,0 +1,54 @@
+﻿<odoo>
+    <record id="view_shopify_instance_tree" model="ir.ui.view">
+        <field name="name">shopify.instance.tree</field>
+        <field name="model">shopify.instance</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="store_name"/>
+                <field name="company_id"/>
+                <field name="sync_active"/>
+                <field name="last_order_sync_at"/>
+                <field name="order_buffer_count"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_shopify_instance_form" model="ir.ui.view">
+        <field name="name">shopify.instance.form</field>
+        <field name="model">shopify.instance</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="store_name"/>
+                            <field name="company_id"/>
+                        </group>
+                        <group>
+                            <field name="client_id"/>
+                            <field name="client_secret" password="True"/>
+                            <field name="access_token" password="True"/>
+                            <field name="token_expiry"/>
+                            <field name="sync_active"/>
+                            <field name="last_order_sync_at"/>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="last_sync_message" nolabel="1"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_shopify_instance" model="ir.actions.act_window">
+        <field name="name">Shopify Instances</field>
+        <field name="res_model">shopify.instance</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem id="menu_shopify_root" name="Shopify"/>
+    <menuitem id="menu_shopify_instance" name="Instances" parent="menu_shopify_root" action="action_shopify_instance"/>
+</odoo>
