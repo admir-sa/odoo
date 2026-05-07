@@ -19,24 +19,29 @@
         <field name="model">shopify.instance</field>
         <field name="arch" type="xml">
             <form>
+                <header>
+                    <button name="action_test_token" type="object" string="Test Token" class="btn-secondary"/>
+                    <button name="action_fetch_latest_orders" type="object" string="Fetch Latest Shopify Orders" class="btn-primary"/>
+                </header>
                 <sheet>
                     <group>
                         <group>
                             <field name="name"/>
                             <field name="store_name"/>
+                            <field name="shop_url" readonly="1"/>
                             <field name="company_id"/>
                         </group>
                         <group>
                             <field name="client_id"/>
                             <field name="client_secret" password="True"/>
                             <field name="access_token" password="True"/>
-                            <field name="token_expiry"/>
+                            <field name="token_expiry" readonly="1"/>
                             <field name="sync_active"/>
                             <field name="last_order_sync_at"/>
                         </group>
                     </group>
                     <group>
-                        <field name="last_sync_message" nolabel="1"/>
+                        <field name="last_sync_message" nolabel="1" readonly="1"/>
                     </group>
                 </sheet>
             </form>

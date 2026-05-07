@@ -10,8 +10,8 @@
         "security/ir.model.access.csv",
         "views/shopify_instance_views.xml",
         "views/shopify_order_buffer_views.xml",
-        "data/ir_cron.xml"
+        "data/ir_cron.xml",
     ],
     "installable": True,
-    "application": True
+    "application": True,
 }

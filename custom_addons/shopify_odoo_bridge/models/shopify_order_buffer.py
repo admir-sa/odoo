@@ -14,10 +14,10 @@ class ShopifyOrderBuffer(models.Model):
         [
             ("pending", "Pending"),
             ("done", "Done"),
-            ("error", "Error")
+            ("error", "Error"),
         ],
         default="pending",
-        required=True
+        required=True,
     )
     error_message = fields.Text()
     received_at = fields.Datetime()
@@ -27,6 +27,6 @@ class ShopifyOrderBuffer(models.Model):
         (
             "shopify_order_instance_unique",
             "unique(instance_id, shopify_order_id)",
-            "Shopify order must be unique per instance."
+            "Shopify order must be unique per instance.",
         )
     ]
